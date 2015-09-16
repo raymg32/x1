@@ -19,9 +19,10 @@ void setup() {
 //// NEXT FRAME:  scene, action, show.
 void draw() {
   //// SCENE:  sky, sun, tree, house, etc.
+  fill(0, 250, 206);
   background( 100,150,200 );                // sky
   fill( 255,255,0 );
-  ellipse( width*3/4, height/8, 40,40 );    // sun
+  ellipse( width*3/4, height/8, 70,70 );    // sun
   
   
   // Grass
@@ -45,6 +46,12 @@ void draw() {
   // tree trunk 
   fill(255,102,0);
   rect(385, 250, 30,120);
+  line( 400, 250, 400, 275);
+  line(390,250, 390, 280);
+  line(390, 330, 390, 350);
+  line( 411,300, 411, 350);
+  fill(129, 75, 8);
+  ellipse( 400, 300, 20, 50);
   
     // apple 
   stroke(0);
@@ -52,6 +59,9 @@ void draw() {
   ellipse( 400, 170 , 10 , 10);
   ellipse(380, 200 , 10, 10);
   ellipse(410, 230, 10 ,10);
+  line( 400, 165, 405,160);
+  line(380, 195, 385, 190  );
+  line( 410, 225, 405, 220  );
   
   
 // text
@@ -77,6 +87,12 @@ void draw() {
               //door knob
               fill(21,206,189);
               ellipse(137,255,10,10);
+              
+              //window
+              rect(140,160,50,50);
+              fill(255);
+              rect(145,165, 20,20);
+              
 
                                             
 // BOTTOM TEXT
@@ -111,13 +127,36 @@ void draw() {
   
   //charlies mouth
   stroke( 0 ) ;
-  fill(255 , 0 , 243);
+  fill(0 , 63 , 243);
   ellipse( x + 10 , y + 30 , 10 , 20);
   
-  // charlies name ) its under him
+  // charlies name its under him
   fill(0);
   text( "ChAR1i3", x,y + 70);
+  
+  //charlies arms
+  fill(178, 0, 255);
+  stroke(178, 0 , 255);
+  rect( x - 20, y + 20 , 20, 10);
+  stroke(0);
+  fill(178, 0, 255);
+  rect(x + 20, y + 20, 20, 10);
+  
+  //charlies hair
+  line(x+10, y  - 10, x + 15, y - 25);
+  line(x + 20, y - 10, x + 19, y - 25);
+  
+//GOD
+fill(229, 126, 0);
+rect( 10, 10, 50, 90);
+rect( 10 , 10, 20, 40);
+rect(40, 10, 20, 30);
+rect(40, 40, 20,30);
+rect(40,70, 20,30);
+rect(0,40, 10,30);
 
+//GOD leash
+line( 25, 70, x ,y);
 }
 
 
