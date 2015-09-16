@@ -1,5 +1,5 @@
-//////// What am I trying to do???
-//////// What is my name?  (CST 112; today's date?)
+//////// MAKE MY OWN CREATURE + HOUSE
+//////// GERSHOM RAYMUND0 (CST 112; SOMEDAY IN SEPTEMBER)
 
 //// GLOBALS:  coordinates, speed, etc.
 float x, y;       // Position of creature.
@@ -19,20 +19,85 @@ void setup() {
 //// NEXT FRAME:  scene, action, show.
 void draw() {
   //// SCENE:  sky, sun, tree, house, etc.
+  fill(0, 250, 206);
   background( 100,150,200 );                // sky
   fill( 255,255,0 );
-  ellipse( width*3/4, height/8, 40,40 );    // sun
-  // Grass
-  fill( 100,200,100 );
-  rect( 0,horizon, width,height*3/4 );      // grass.
+  ellipse( width*3/4, height/8, 70,70 );    // sun
   
-  /* INSERT YOUR CODE HERE! */
-  triangle( 150,horizon, 120,horizon-50, 180,horizon-50  );  // tree
-  text( "This is NOT a good tree; please fix it!", 150,horizon );
-                                            // house
+  
+  // Grass
+  stroke(0);
+  fill( 100,200,100 );
+  rect( 0,horizon, width,height*3/4 );   
+  
 
+      //GRASS LINES
+      stroke(0);
+      line(250, 250, 260 , 240);
+      line(260, 240, 270, 250);
+      line(270, 250, 280, 240);
+      line(280, 240, 290, 250);
+      
+  
+// tree
+  fill(0,255,14);
+  triangle( 400,100, 350,250, 450,250 );
+  
+  // tree trunk 
+  fill(255,102,0);
+  rect(385, 250, 30,120);
+  line( 400, 250, 400, 275);
+  line(390,250, 390, 280);
+  line(390, 330, 390, 350);
+  line( 411,300, 411, 350);
+  fill(129, 75, 8);
+  ellipse( 400, 300, 20, 50);
+  
+    // apple 
+  stroke(0);
+  fill( 198 , 100 , 102 );
+  ellipse( 400, 170 , 10 , 10);
+  ellipse(380, 200 , 10, 10);
+  ellipse(410, 230, 10 ,10);
+  line( 400, 165, 405,160);
+  line(380, 195, 385, 190  );
+  line( 410, 225, 405, 220  );
+  
+  
+// text
+  fill(255);
+  text( "A+ PLS...", 200,horizon );
+  
+// house
+     fill(238,89,80);
+     stroke(0);
+     rect( 100, 150 , 100, 130);
+
+          //roof of the house
+
+          stroke(0);
+          fill(75,89,80);
+          triangle(100,150,200,150,150,100);
+
+            // door 
+            stroke(0);
+            fill(20,100,100);
+            rect(130 , 230 , 30,50);
+
+              //door knob
+              fill(21,206,189);
+              ellipse(137,255,10,10);
+              
+              //window
+              rect(140,160,50,50);
+              fill(255);
+              rect(145,165, 20,20);
+              
+
+                                            
+// BOTTOM TEXT
   fill(0);
-  text( "My name is Mud", 10,height-20 );                                          
+  text( "My Boy ChAR1i3 is just c0d3", 10,height-20 );                                          
                                             
   //// ACTION:  move (x,y) coordinates.
   x=  x + dx;
@@ -40,10 +105,58 @@ void draw() {
   
   //// SHOW:  display the creature at (x,y)
 
-  /* INSERT YOUR CODE HERE! */
-  fill(255,0,0); rect( x,y, 30,50 );        /* REPLACE THIS WITH YOUR OWN CODE! */
-  text( "Fred", x,y );
+//// charlies head
+  stroke(178 , 0 ,255);
+  fill(178, 0 , 255);
+  ellipse(x + 15 , y , 30 , 30);
+  
+  // charlies body
+  stroke( 178 , 0 , 255);
+  fill(178 , 0, 255); 
+  rect( x,y, 30,50 ); 
+  
+  //charlies left eye
+  stroke (0 );
+  fill(246,255,0);
+  ellipse( x+ 5 , y + 10, 5 ,5 );
+  
+  //charlies right eye
+  stroke(0);
+  fill(246, 255, 0);
+  ellipse( x + 20, y + 10 ,5 ,5);
+  
+  //charlies mouth
+  stroke( 0 ) ;
+  fill(0 , 63 , 243);
+  ellipse( x + 10 , y + 30 , 10 , 20);
+  
+  // charlies name its under him
+  fill(0);
+  text( "ChAR1i3", x,y + 70);
+  
+  //charlies arms
+  fill(178, 0, 255);
+  stroke(178, 0 , 255);
+  rect( x - 20, y + 20 , 20, 10);
+  stroke(0);
+  fill(178, 0, 255);
+  rect(x + 20, y + 20, 20, 10);
+  
+  //charlies hair
+  line(x+10, y  - 10, x + 15, y - 25);
+  line(x + 20, y - 10, x + 19, y - 25);
+  
+//GOD
+fill(229, 126, 0);
+rect( 10, 10, 50, 90);
+rect( 10 , 10, 20, 40);
+rect(40, 10, 20, 30);
+rect(40, 40, 20,30);
+rect(40,70, 20,30);
+rect(0,40, 10,30);
 
+//GOD leash
+line( 25, 70, x ,y);
 }
 
 
