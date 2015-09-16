@@ -1,10 +1,17 @@
-//////// MAKE MY OWN CREATURE + HOUSE
-//////// GERSHOM RAYMUND0 (CST 112; SOMEDAY IN SEPTEMBER)
+//////// Exercise x2:  modularize exercise x1, and add dog to chase hero.
+//////// Whoever Whoever  (CST 112; today's date?)
+
+//////// Please change these to your name and today's date.
+String author=  "Whoever Whatever";
+String title=  " ??? ";
+String help=  " Click to relocate hero \n 'q' to quit; 'r' to reset. ";
+
 
 //// GLOBALS:  coordinates, speed, etc.
-float x, y;       // Position of creature.
-float dx, dy;     // Speed.
 float horizon;
+float x, y;       // Position.
+float dx, dy;     // Speed.
+float dogX, dogY;
 
 //// SETUP:  window size, initialization (start in middle of screen).
 void setup() {
@@ -18,8 +25,16 @@ void setup() {
 
 //// NEXT FRAME:  scene, action, show.
 void draw() {
-  //// SCENE:  sky, sun, tree, house, etc.
-  fill(0, 250, 206);
+  scene();
+  hero();
+  dog();
+  messages();
+  
+}
+
+//// SCENE:  sky, sun, tree, house, etc.
+void scene() {  
+fill(0, 250, 206);
   background( 100,150,200 );                // sky
   fill( 255,255,0 );
   ellipse( width*3/4, height/8, 70,70 );    // sun
@@ -92,20 +107,20 @@ void draw() {
               rect(140,160,50,50);
               fill(255);
               rect(145,165, 20,20);
-              
+}
 
-                                            
-// BOTTOM TEXT
+void messages() {
+  text( title, width/3, 20 );
+  text( help, width*2/3, 30 );
+  text( author, 10,height-20 );
+}
+
+//// ACTION:  move (x,y) coordinates of hero & dog; show them.
+void hero() {
   fill(0);
-  text( "My Boy ChAR1i3 is just c0d3", 10,height-20 );                                          
-                                            
-  //// ACTION:  move (x,y) coordinates.
-  x=  x + dx;
-  y=  y + dy;
+  text( "ChAr1i3 LIVES!!!", 230, 200 );
   
-  //// SHOW:  display the creature at (x,y)
-
-//// charlies head
+  //Charlies head
   stroke(178 , 0 ,255);
   fill(178, 0 , 255);
   ellipse(x + 15 , y , 30 , 30);
@@ -145,19 +160,21 @@ void draw() {
   //charlies hair
   line(x+10, y  - 10, x + 15, y - 25);
   line(x + 20, y - 10, x + 19, y - 25);
-  
-//GOD
-fill(229, 126, 0);
-rect( 10, 10, 50, 90);
-rect( 10 , 10, 20, 40);
-rect(40, 10, 20, 30);
-rect(40, 40, 20,30);
-rect(40,70, 20,30);
-rect(0,40, 10,30);
-
-//GOD leash
-line( 25, 70, x ,y);
 }
+void dog() {
+  dogX=  dogX - (dogX-x)/30;
+  dogY=  dogY - (dogY-y)/40;
+  text( dogX, 10, 10 );
+  text( dogY, 10, 20 );
+  //
+  fill( 150,0,0 );
+  rect(dogX,dogY, 60,30 );
+  /* INSERT YOUR CODE HERE! */
+  /* REPLACE THIS STUB! */  text( "woof, woof!d!!", 150, 150 );
+}
+
+
+
 
 
 //////// HANDLERS:  mouse clicks, keys
@@ -173,6 +190,7 @@ void keyPressed() {
   if (key == 'q') {
     exit();                           // press 'q' key to QUIT.
   }
+  /* INSERT YOUR CODE HERE! */
 }
    
    
